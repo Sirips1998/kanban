@@ -63,22 +63,6 @@ buttonContainer.appendChild(removeCardButton);
 removeCardButton.className = "removeCardButton";
 document.body.appendChild(buttonContainer, document.body.firstChild);
 
-// const createCard = (index) => {
-//     const cardElement = document.createElement('div');
-//     cardElement.className = 'card';
-//     cardElement.innerText = `Card #${index}`;
-//     cardElement.draggable = true;
-
-//     cardElement.addEventListener('dragstart',() => {
-//         event.target.id = 'dragged'
-//     });
-
-//     cardElement.addEventListener('dragend', (e) => {
-//         e.target.id = undefined;
-//     });
-
-//     attachCard(cardElement);
-// }
 
 const createCards = (amount) => {
   for (let i = 0; i < amount; i++) {
