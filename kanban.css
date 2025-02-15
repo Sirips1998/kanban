@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Kanit", serif;
+}
+
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.navKanbanBoard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 1000;
+}
+
+nav {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+#logoFont {
+  font-size: 30px;
+}
+
+#kanbanBoard {
+  display: flex;
+  column-gap: 24px;
+  padding: 48px;
+  height: 100%;
+  width: 100%;
+  font-size: 24px;
+  height: 600px;
+}
+
+.swimlane {
+  position: relative;
+  overflow: hidden;
+  font-size: 16px;
+  border: 0px;
+  border-radius: 5px;
+  flex-basis: 1;
+  flex-shrink: 0;
+  flex-grow: 1;
+  width: 20px;
+  height: 500px;
+  margin-top: 30px;
+}
+
+.Todo, .Doing, .Done, .Hold {
+  border-radius: 30px;
+  border: 0px;
+  background: #d0e3e6;
+  box-shadow: 10px -10px 25px 0px rgba(143, 64, 248, .25),-10px 10px 25px 0px rgba(39, 200, 255, .25);
+}
+
+.card {
+  margin-top: 20px;
+  padding: 6px;
+  border-radius: 30px;
+  font-weight: bold;
+  display: block;
+  gap: 27px;
+  background: transparent;
+  margin: 1.5px;
+  border: 0px;
+  
+
+  .Todo & {
+    border: 0px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: #5bc3ca;
+    box-shadow: 10px -10px 25px 0px rgba(160, 102, 236, 0.25),-10px 10px 25px 0px rgba(81, 111, 121, 0.25);
+  }
+
+  .Doing & {
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: #a7a537;
+    box-shadow: 10px -10px 25px 0px rgba(220, 245, 80, 0.25),-10px 10px 25px 0px rgba(216, 195, 10, 0.25);
+  }
+
+  .Done & {
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: #855bca;
+    box-shadow: 10px -10px 25px 0px rgba(126, 64, 206, 0.25),-10px 10px 25px 0px rgba(21, 184, 238, 0.25);
+  }
+
+  .Hold & {
+    color: white;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background: #ca5b9c;
+    box-shadow: 10px -10px 25px 0px #ca2a9540,-10px 10px 25px 0px #ee15dc40;
+  }
+}
+
+.comment-Box {
+  width: 200px;
+  height: 49px;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  gap: 10px;
+}
+
+
+
+.footerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  gap: 10px;
+}
+
+.footerText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.textEnd {
+  font-size: 1.5rem;
+}
+
+
+
+button:active {
+  transform: scale(0.95);
+}
+
+button {
+  padding: 20px 50px;
+  border: 0px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  position: relative;
+  background: transparent;
+  margin: 20px;
+  transition: all 0.25s ease;
+
+}
+
+button:hover {
+  background-color: rgb(216, 109, 90);
+  transform: translate(-12px, -12px);
+}
+
+button:hover::after {
+  background-color: rgb(216, 109, 90);
+  transform: translate(12px, 12px);
+}
+
+button:hover::before {
+  background-color: rgb(216, 109, 90);
+  transform: translate(6px, 6px);
+}
+
+button::after, button::before {
+  content: "";
+  position: absolute;
+  opacity: 0.3;
+  border-radius: inherit;
+  background: black;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: all 0.25s ease;
+}
+
+.addCardButton {
+  background: black;
+  color: white;
+  border-radius: 30px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.removeCardButton {
+  background: black;
+  color: white;
+  border-radius: 30px;
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
